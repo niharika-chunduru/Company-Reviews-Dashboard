@@ -1,0 +1,43 @@
+---
+title: "README"
+author: "Niharika Chunduru"
+date: "2024-09-03"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# File Structure
+Ensure that the json data is stored in the below file structure
+
+`data -> data_source -> company_name -> data_source_company_name_[0-n].json`
+
+# Order of running scripts
+1. __`data_preprocess.ipynb`__
+2. __`text_preprocess.ipynb`__
+3. __`sentiment_analysis.ipynb`__
+4. __`app.R`__
+
+# Dependencies
+These modules and packages should be installed in advance (or while running the scripts) for smooth running of the analysis and application
+
+### Python modules:
++ pandas
++ matplotlib
++ ntlk
++ textblob
+
+### R packages
++ ggplot2
++ shinydashboard
++ shinyWidgets
++ stringr
++ tidyverse
++ tigris
+
+
+
