@@ -5,5 +5,5 @@ This repository contains the files to the dashboard that is hosted [here](https:
 + `/media`: Plot outputs and images
 + `/styles`: Style sheets used for the dasboard
 + `/www`: Additional media output for the dashboard
-+ `Jupyter notebooks`: Code to preprocess the data for dashboard input
 + `app.R`: Code to design and build the dashboard
++ `Jupyter notebooks`: Code to preprocess the data for dashboard input
