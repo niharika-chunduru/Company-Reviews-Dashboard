@@ -21,7 +21,7 @@ get_sentiment_info <- function(company) {
   p_neg <- round(100-p_pos, 2)
   return(list(n_reviews=n_reviews,p_pos=paste0(p_pos,'%'),p_neg=paste0(p_neg,'%')))
 }
-generate_ratings_plot <- function(company) {
+get_ratings_info <- function(company) {
   filtered_data <- read_csv('data/aggregated/aggregated_mean_ratings.csv') %>% 
     select(-c(...1))  %>% 
     filter(company==tolower({{company}}))
@@ -80,14 +80,14 @@ get_wordcloud_summary <- function(company) {
 dashboard_body <- function() {
   fluidPage(
     fluidRow(
-          selectizeInput(
-            'companies', 
-            'Select any two companies to compare:', 
-            c('Airbnb'='airbnb','Booking.com'='booking','Tripadvisor'='tripadvisor'), 
-            options=list(placeholder = 'Choose here', maxItems = 2), 
-            multiple=TRUE, 
-            selected = c('airbnb','tripadvisor')
-            )
+      selectizeInput(
+        'companies', 
+        'Choose up to two companies from the dropdown:', 
+        c('Airbnb'='airbnb','Booking.com'='booking','Tripadvisor'='tripadvisor'), 
+        options=list(placeholder = 'Choose here', maxItems = 2), 
+        multiple=TRUE, 
+        width = '30%'
+      )
     ), 
     tags$br(),
     tags$br(),
@@ -218,7 +218,7 @@ server <- function(input, output, session) {
     
     ### Company-A results
     ## Fetch Company-A output information from functions
-    ratings_info_companyA <- generate_ratings_plot(companyA)
+    ratings_info_companyA <- get_ratings_info(companyA)
     sentiment_info_companyA <- get_sentiment_info(companyA)
     summary_companyA <- get_wordcloud_summary(companyA)
     
@@ -248,7 +248,7 @@ server <- function(input, output, session) {
     
     ### Company-B results
     ## Fetch Company-B output information from functions
-    ratings_info_companyB <- generate_ratings_plot(companyB)
+    ratings_info_companyB <- get_ratings_info(companyB)
     sentiment_info_companyB <- get_sentiment_info(companyB)
     summary_companyB <- get_wordcloud_summary(companyB)
     

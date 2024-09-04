@@ -38,6 +38,8 @@ Fortunately, the numerical ratings were already standardized in both sources wit
 ## Dashboard Platform
 For the development of the interactive dashboard, _Shiny_ was chosen as the programming tool of choice. _Shiny_ makes dashboard development easier than Python because it’s part of the R ecosystem, which is built for data analysis and visualization. _Shiny's_ concise, declarative code style and its built-in, interactive UI components streamline the process. It also uses reactive programming to automatically update the dashboard based on user inputs or data changes, reducing manual coding. In contrast, Python often requires managing multiple libraries and more complex code to achieve similar results. Dashboards developed using _Shiny_ can also be deployed to _ShinyApps^[2 https://www.shinyapps.io]_, which further cuts down on deployment time and search for domains.
 
+Link to the hosted application: [https://niharika-chunduru.shinyapps.io/company-competitor-analysis/](https://niharika-chunduru.shinyapps.io/company-competitor-analysis/)
+
 ## Dashboard Layout and Usage
 Given the objective of the project, an A vs. B layout was chosen for this minimal dashboard to make it easy to do comparative analysis. 
 
@@ -66,8 +68,8 @@ In this scenario, there will be a little more changes to be performed in the Jup
 4. __`sentiment_analysis.ipynb`__: Update the `company` variable to point to the correct company name, and run the code as is.
 
 
-## Scenario-3: Adding more data scources companies
-While not impossible, this scenario will demand the most amount or work, as the data from the new source will need to be preprocessed and normalized a format that is consistent with the existing data. 
+## Scenario-3: Adding more data scources
+While not impossible, this scenario will demand the most amount or work, as the data from the new source will need to be preprocessed and normalized to a format that is consistent with the existing data. 
 
 1. Add the json files for the new company in the `data` folder by following the existing directory structure (`data/<data_source>/<company_name>/<data_source_company_name_[0-n].json>`).
 2. __`data_preprocess.ipynb`__: Update the global parameters and add in new preprocessing and normalizing code to generate the ratings data set. 
